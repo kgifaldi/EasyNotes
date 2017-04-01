@@ -1,0 +1,83 @@
+<html lan="en">
+
+<head>
+  <title>Easy Notes</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../static/add_class.css"/>
+</head>
+
+
+
+<body>
+
+<div class="container-fluid">
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container navbar">
+
+        <ul class="nav nav-pills">
+          <li role="presentation"><a href="/notes/main/"><h4>HOME</h4></a></li>
+          <li role="presentation" class="active"><a href="/notes/add_class/"><h4>ADD CLASS</h4></a></li>
+          <li role="presentation"><a href="/notes/add_notes/"><h4>ADD NOTES</h4></a></li>
+
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+</div>
+
+<div class="container-fluid">
+  <div class="container-fluid">
+
+    <form method="POST" action="/notes/main/">
+      {% csrf_token %}
+
+      <div class="jumbotron">
+
+
+      <div class="input-group">
+        <input type="text" name="htmlclassname" class="form-control" placeholder="Class Name"/>
+
+		<input type="checkbox" name="htmlday" value="S">S<br>
+		<input type="checkbox" name="htmlday" value="M">M<br>
+		<input type="checkbox" name="htmlday" value="T">T<br>
+		<input type="checkbox" name="htmlday" value="W">W<br>
+		<input type="checkbox" name="htmlday" value="TH">TH<br>
+		<input type="checkbox" name="htmlday" value="F">F<br>
+		<input type="checkbox" name="htmlday" value="SA">SA<br>
+		
+		<input type="time" name="htmlstarttime">
+			Start Time <br>
+		<input type="time" name="htmlendtime">
+			End Time <br>
+			
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit">SUBMIT</button>
+        </span>
+      </div>
+
+
+	  </div>
+
+    </form>
+
+
+  </div>
+
+
+</div>
+
+</body>
+
+</html>
+
