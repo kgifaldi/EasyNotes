@@ -39,14 +39,14 @@
 <div class="container-fluid">
   <div class="container-fluid">
 
-    <form method="POST" action="/notes/main/">
+    <form method="POST" action="/notes/view_classes/">
       {% csrf_token %}
 
       <div class="jumbotron">
 
 
       <div class="input-group">
-        <input type="text" name="htmlclassname" class="form-control" placeholder="Class Name"/>
+        <input type="text" name="htmlClassName" class="form-control" placeholder="Class Name"/>
 
 		<input type="checkbox" name="htmlday" value="S">S<br>
 		<input type="checkbox" name="htmlday" value="M">M<br>
@@ -55,12 +55,12 @@
 		<input type="checkbox" name="htmlday" value="TH">TH<br>
 		<input type="checkbox" name="htmlday" value="F">F<br>
 		<input type="checkbox" name="htmlday" value="SA">SA<br>
-		
-		<input type="time" name="htmlstarttime">
+
+		<input type="time" name="htmlStartTime">
 			Start Time <br>
-		<input type="time" name="htmlendtime">
+		<input type="time" name="htmlEndTime">
 			End Time <br>
-			
+
         <span class="input-group-btn">
           <button class="btn btn-default" type="submit">SUBMIT</button>
         </span>
@@ -80,4 +80,3 @@
 </body>
 
 </html>
-

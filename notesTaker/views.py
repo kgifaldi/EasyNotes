@@ -63,6 +63,34 @@ def add_class(request):
     template = loader.get_template('notesTaker/add_class.html')
     return HttpResponse(template.render(context, request))
 
+def view_classes(request):
+    global loggedIn
+    if loggedIn:
+        form = classForm(request.POST)
+        if form.is_valid():
+            htmlClassName = form.cleaned_data['htmlClassName']
+            htmlday = form.cleaned_data['htmlday']
+            htmlStartTime = form.cleaned_data['htmlStartTime']
+            htmlEndTime = form.cleaned_data['htmlEndTime']
+            #some_var = request.POST.getList('htmlday')
+            print(htmlClassName)
+            print(htmlday)
+            print(htmlStartTime)
+            print(htmlEndTime)
+            lst = []
+            #currentUser.addClass()
+        else:
+            username = ""
+            password = ""
+        global currentUser
+
+    else:
+        template = loader.get_template('notesTaker/login.html')
+        context = {
+
+        }
+        return HttpResponse(template.render(context, request))
+
 def add_notes(request):
     context = {
 
