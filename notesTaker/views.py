@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template.context import RequestContext
 from .models import User
 from django.template import loader
-from .forms import userForm
+from .forms import userForm, classForm
 
 username = ""
 password = ""
