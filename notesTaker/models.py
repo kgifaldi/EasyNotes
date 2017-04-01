@@ -9,16 +9,17 @@ import datetime
     #classData = [] # [0] = ["M", "W"], [1] = startTime(int:1230), [2] = endTime(int), [3] = notesData {date("03:22:13") : notes("blah balh")}
 
 class User(models.Model):
-    def __init__(self):
-        self.userData = {}
-        tempList = []
-        emptyList = []
-        emptyDict = {}
-        tempList.append(emptyList)
-        tempList.append(0000)
-        tempList.append(2400)
-        tempList.append(emptyDict)
-        self.userData['MISC'] = tempList
+    username = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+    userData = {}
+    tempList = []
+    emptyList = []
+    emptyDict = {}
+    tempList.append(emptyList)
+    tempList.append(0000)
+    tempList.append(2400)
+    tempList.append(emptyDict)
+    userData['MISC'] = tempList
 
     #            "biology", [0:["M", "W"], 1:1323, 2:1440, 3:{}
     def addClass(self, CLASSNAME, CLASSDATA):
@@ -36,4 +37,5 @@ class User(models.Model):
         if not classFound:
             ((self.userData['MISC'])[3])[DATE] = NOTES
 
-
+    def __str__(self):
+        return self.username
